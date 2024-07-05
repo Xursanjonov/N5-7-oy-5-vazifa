@@ -14,10 +14,16 @@ interface Product {
 
 const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [limit, setLimit] = useState<number>(() => {
+    const savedLimit = localStorage.getItem("productLimit");
+    return savedLimit ? parseInt(savedLimit, 10) : 8;
+  });
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get<Product[]>("https://fakestoreapi.com/products?limit=8");
+      const response = await axios.get<Product[]>(
+        `https://fakestoreapi.com/products?limit=${limit}`
+      );
       setProducts(response.data);
     } catch (error) {
       console.log(error, "Ma'lumotlarni yuklashda xatolik yuz berdi.");
@@ -26,7 +32,15 @@ const Products = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [limit]);
+
+  const handleViewMore = () => {
+    setLimit((prevLimit) => {
+      const newLimit = prevLimit + 4;
+      localStorage.setItem("productLimit", newLimit.toString());
+      return newLimit;
+    });
+  };
 
   return (
     <div className="products-wrapper">
@@ -37,6 +51,9 @@ const Products = () => {
           <ProductItem key={product?.id} product={product} />
         ))}
       </div>
+      <button onClick={handleViewMore} className="viewBtn">
+        View products
+      </button>
     </div>
   );
 };

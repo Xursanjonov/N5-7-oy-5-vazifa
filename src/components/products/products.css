@@ -32,3 +32,12 @@
   object-fit: fill;
   background-color: #191b1c;
 }
+.viewBtn {
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  color: white;
+  font-size: 18px;
+  border: 1px solid blue;
+  background-color: transparent;
+}
