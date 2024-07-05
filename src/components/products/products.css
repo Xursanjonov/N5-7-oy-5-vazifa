@@ -1,0 +1,32 @@
+.products-wrapper {
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: black;
+}
+.products-wrapper-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.product-item {
+  width: 260px;
+  height: 405px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 15px;
+}
+.product-item-img {
+  width: 260px;
+  height: 325px;
+  background-color: #191b1c;
+}

@@ -1,0 +1,31 @@
+.header {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #000000;
+}
+.header-container {
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* header top */
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* header bottom */
+.header__bottom {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-lists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
