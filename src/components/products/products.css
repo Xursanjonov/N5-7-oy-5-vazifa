@@ -28,5 +28,7 @@
 .product-item-img {
   width: 260px;
   height: 325px;
+  padding: 20px;
+  object-fit: fill;
   background-color: #191b1c;
 }
